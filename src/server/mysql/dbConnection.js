@@ -1,7 +1,10 @@
 import { Sequelize } from "sequelize";
+import dotenv from "dotenv";
+dotenv.config();
 
-export const connection = new Sequelize("linkr", "root", "", {
-  host: "localhost",
+const { DB_HOST, DB_NAME, DB_USERNAME, DB_PASSWORD } = process.env;
+export const connection = new Sequelize(DB_NAME, DB_USERNAME, DB_PASSWORD, {
+  host: DB_HOST,
   dialect: "mysql",
   dialectOptions: {
     charset: "utf8mb4",

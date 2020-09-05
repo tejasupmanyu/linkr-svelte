@@ -1,4 +1,6 @@
 import dotenv from "dotenv";
+dotenv.config();
+
 import express from "express";
 import sirv from "sirv";
 import compression from "compression";
@@ -17,7 +19,6 @@ import {
 import UserService from "./server/services/user.service";
 
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
-dotenv.config();
 
 const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === "development";
