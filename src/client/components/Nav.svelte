@@ -19,12 +19,11 @@
 </script>
 
 <header
-  class="absolute top-0 px-8 h-16 border-b border-gray-400 flex items-center
-  w-full z-10 shadow-md">
+  class="sticky top-0 px-8 h-16 border-b border-gray-400 flex items-center
+    bg-white w-full z-10 shadow-md">
   <nav class="flex flex-row justify-between w-full items-center">
     <a rel="prefetch" href="/" class="font-bold text-3xl flex items-center">
-      Linkr
-      <img class="h-8 ml-2" src="logo-512.png" alt="brand logo" />
+      Linkr <img class="h-8 ml-2" src="logo-512.png" alt="brand logo" />
     </a>
     {#if user}
       <UserAvatarMenu>
@@ -47,18 +46,16 @@
           aria-current={segment === undefined ? 'page' : undefined}
           href={'/boards'}
           class="w-full p-4 hover:bg-gray-200 flex items-center
-          hover:text-rausch">
-          <i class="far fa-clipboard w-8 " />
-          Boards
+            hover:text-rausch">
+          <i class="far fa-clipboard w-8" /> Boards
         </a>
         <a
           slot="menu-item-2"
           aria-current={segment === undefined ? 'page' : undefined}
           href="/auth/logout"
           class="w-full p-4 hover:bg-gray-200 hover:text-red-700 flex
-          items-center">
-          <i class="fas fa-sign-out-alt w-8" />
-          Logout
+            items-center">
+          <i class="fas fa-sign-out-alt w-8" /> Logout
         </a>
       </UserAvatarMenu>
     {:else if segment !== 'signin'}

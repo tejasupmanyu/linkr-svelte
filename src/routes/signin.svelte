@@ -11,13 +11,12 @@
   <title>Linkr - Sign In</title>
 </svelte:head>
 
-<section class="w-full h-full p-8 wire-bg">
+<section class="w-full h-full p-8 wire-bg flex flex-grow flex-col">
   <section
     class="sm:w-1/4 sm:h-1/4 w-full h-1/2 border p-4 m-auto inset-auto my-40
-    flex justify-center flex-col shadow-xl rounded bg-white">
+      flex justify-center flex-col shadow-xl rounded bg-white">
     <a href="/" class="hover:text-rausch mb-2">
-      <i class="fas fa-arrow-left" />
-      Go back to home
+      <i class="fas fa-arrow-left" /> Go back to home
     </a>
     <p class="font-medium text-3xl mb-4">Join Linkr</p>
     <a
@@ -26,5 +25,4 @@
       Sign In With Google
     </a>
   </section>
-
 </section>
