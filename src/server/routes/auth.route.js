@@ -15,7 +15,7 @@ authRouter.get(
   passport.authenticate("google"),
   (req, res) => {
     res.cookie("userProfile", req.user, { maxAge: 900000 });
-    res.redirect("/");
+    res.redirect("/boards");
   }
 );
 

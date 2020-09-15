@@ -13,6 +13,8 @@
   const { session } = stores();
   let user;
 
+  $: user = $session.user;
+
   onMount(() => {
     user = $session.user;
   });
@@ -38,6 +40,9 @@
             <span class="font-medium text-sm sm:text-md">
               {user.displayName}
             </span>
+            <div class="text-left text-gray-600">
+              <span>@{user.username}</span>
+            </div>
           </div>
         </div>
         <a

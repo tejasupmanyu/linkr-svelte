@@ -3761,6 +3761,11 @@ supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
+svelte-notifications@^0.9.9:
+  version "0.9.9"
+  resolved "https://registry.yarnpkg.com/svelte-notifications/-/svelte-notifications-0.9.9.tgz#3d19c48ff5f6624c31ebca476309a5516dfc4bb7"
+  integrity sha512-UMcjqzuNeUGHd3ZzSzRFXn22Z06VlPrTS8CJwFkkE+qKWn2tVRgsG4b62zZBcR/7SMcufT/Ouxpv/gbA8LaQcQ==
+
 svelte-popover@^2.0.8:
   version "2.0.8"
   resolved "https://registry.yarnpkg.com/svelte-popover/-/svelte-popover-2.0.8.tgz#38e9e8c065e779612c84ef0e992e13c15740fe42"

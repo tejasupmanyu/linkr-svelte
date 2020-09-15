@@ -8,6 +8,9 @@
   import { fade } from "svelte/transition";
   import InlineMenu from "./InlineMenu.svelte";
   import PostAuthorInfo from "./PostAuthorInfo.svelte";
+  import { getNotificationsContext } from "svelte-notifications";
+
+  const { addNotification } = getNotificationsContext();
 
   dayjs.extend(LocalizedFormat);
 
@@ -30,8 +33,13 @@
     }
   });
 
-  async function onCopyLink() {
-    await navigator.clipboard.writeText(linkUrl);
+  function onCopyLink() {
+    navigator.clipboard.writeText(linkUrl);
+    addNotification({
+      text: "Copied Link URL!",
+      position: "top-center",
+      removeAfter: 4000,
+    });
   }
 
   async function onDeletePostClick() {
@@ -45,13 +53,13 @@
 </script>
 
 <section
-  class="border rounded w-full flex flex-col p-2 my-3 mx-2 hover:shadow-xl ">
+  class="border rounded w-full flex flex-col p-2 my-3 mx-2 hover:shadow-xl">
   <div class="flex items-center justify-between">
     <PostAuthorInfo {author} />
     <div class="flex items-center">
       <button
         class="text-gray-600 hover:text-gray-800 hover:bg-gray-300 text-xl
-        focus:bg-gray-300 focus:outline-none py-1 px-2 rounded mx-2"
+          focus:bg-gray-300 focus:outline-none py-1 px-2 rounded mx-2"
         on:click={onCopyLink}>
         <i class="far fa-copy" />
       </button>
@@ -60,10 +68,9 @@
           <button
             slot="menu-item-1"
             class="w-full p-2 hover:bg-gray-200 hover:text-red-700 flex
-            items-center"
+              items-center"
             on:click|stopPropagation={onDeletePostClick}>
-            <i class="fas fa-trash w-8" />
-            Delete
+            <i class="fas fa-trash w-8" /> Delete
           </button>
         </InlineMenu>
       {/if}
@@ -80,7 +87,7 @@
 
   {#if !_.isEmpty(previewData)}
     <a
-      class="border rounded p-2 my-2 flex flex-col hover:bg-gray-200 "
+      class="border rounded p-2 my-2 flex flex-col hover:bg-gray-200"
       href={linkUrl}
       target="_blank"
       transition:fade>
@@ -94,7 +101,7 @@
   {/if}
   <p>{text}</p>
   <div class="flex justify-end">
-    <div class="text-gray-600 text-sm ">
+    <div class="text-gray-600 text-sm">
       {dayjs(post.createdAt).format('lll')}
     </div>
   </div>
