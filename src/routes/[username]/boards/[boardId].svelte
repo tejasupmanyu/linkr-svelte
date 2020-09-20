@@ -29,7 +29,6 @@
 <script>
   import { onMount } from "svelte";
   import { urls } from "../../../client/API/urls";
-  import NewPost from "../../../client/components/NewPost.svelte";
   import Post from "../../../client/components/Post.svelte";
   import _ from "lodash";
 
@@ -57,8 +56,7 @@
         <a
           class="mb-4 hover:text-rausch"
           href={`${userDetails.username}/boards`}>
-          <i class="fas fa-arrow-left" />
-          All boards by {`@${userDetails.username}`}
+          <i class="fas fa-arrow-left" /> All boards by {`@${userDetails.username}`}
         </a>
         <h1 class="mx-auto font-bold text-3xl sm:text-6xl">🎯 {board.name}</h1>
       </div>

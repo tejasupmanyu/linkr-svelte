@@ -22,7 +22,7 @@ export async function deleteBoard(req, res) {
   const { isAllowed, boardId } = await isAllowedUpdateAccessToBoard(req);
   if (isAllowed) {
     await BoardService.deleteOneById(boardId);
-    res.send(board);
+    res.send();
   } else {
     res.status(400).send();
   }

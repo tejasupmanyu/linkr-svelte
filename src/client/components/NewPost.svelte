@@ -3,9 +3,11 @@
   import { urls } from "../API/urls";
   import { isValidUrl } from "../utils/helpers";
   import { fade } from "svelte/transition";
+  import PostAuthorInfo from "./PostAuthorInfo.svelte";
 
   export let onAddNewPost;
   export let boardId;
+  export let author;
 
   let linkUrl = "";
   let text = "";
@@ -41,6 +43,9 @@
 </style>
 
 <section class="border rounded w-full flex flex-col p-2 m-2" transition:fade>
+  <div class="flex items-center justify-between mb-4">
+    <PostAuthorInfo {author} />
+  </div>
   <input
     class="border rounded my-2 p-2"
     bind:value={linkUrl}
@@ -57,11 +62,10 @@
     </span>
     <button
       class="bg-rausch rounded text-white py-2 px-3 disabled:opacity-50
-      disabled:bg-rausch hover:bg-rausch-dark"
+        disabled:bg-rausch hover:bg-rausch-dark"
       disabled={!linkUrl || text.length > 240}
       on:click={onAddNewPostClick}>
       Create
     </button>
   </div>
-
 </section>

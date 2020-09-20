@@ -56,7 +56,7 @@
     </h1>
     <button
       class="text-gray-600 hover:text-gray-800 hover:bg-gray-300 text-xl
-        focus:bg-gray-300 focus:outline-none py-1 px-2 rounded mx-2"
+        focus:bg-gray-300 focus:outline-none py-1 px-2 rounded mx-2 h-12"
       on:click={onCopyLink}>
       <i class="far fa-copy" />
     </button>

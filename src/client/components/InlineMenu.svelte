@@ -15,7 +15,7 @@
   placement="bottom-center"
   arrowColor="#e2e8f0">
   <button
-    class="px-2 rounded-sm border hover:bg-gray-300 text-gray-600"
+    class="px-2 rounded-sm border hover:bg-gray-300 text-gray-600 bg-white"
     slot="target">
     <i class="fas fa-ellipsis-h" />
   </button>

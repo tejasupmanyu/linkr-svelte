@@ -27,6 +27,7 @@
     "dotenv": "^8.2.0",
     "esm": "^3.2.25",
     "express": "^4.17.1",
+    "jsdom": "^16.4.0",
     "link-preview-generator": "^0.0.4",
     "lodash": "^4.17.19",
     "mysql2": "^2.1.0",

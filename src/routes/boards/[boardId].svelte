@@ -42,12 +42,11 @@
   <section class="sm:w-1/2 w-full m-auto flex flex-col items-center">
     <div class="self-start">
       <a class="mb-4 hover:text-rausch" href={`/boards`}>
-        <i class="fas fa-arrow-left" />
-        All boards
+        <i class="fas fa-arrow-left" /> All boards
       </a>
       <h1 class="mx-auto font-bold text-3xl sm:text-6xl">🎯 {board.name}</h1>
     </div>
-    <NewPost onAddNewPost={fetchBoardDetails} {boardId} />
+    <NewPost onAddNewPost={fetchBoardDetails} {boardId} author={user} />
     {#each postsInBoard as post, i (post.id)}
       <Post {post} showControls refetch={fetchBoardDetails} author={user} />
     {/each}
