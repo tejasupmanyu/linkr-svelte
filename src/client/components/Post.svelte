@@ -78,7 +78,7 @@
   </div>
   <div class="my-2">
     <a
-      class="text-rausch hover:text-rausch-dark"
+      class="text-rausch hover:text-rausch-dark break-words"
       href={linkUrl}
       target="_blank">
       {linkUrl}
