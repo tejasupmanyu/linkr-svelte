@@ -32,7 +32,6 @@
   import Post from "../../../client/components/Post.svelte";
   import _ from "lodash";
   import { getNotificationsContext } from "svelte-notifications";
-  import { is_empty } from "svelte/internal";
 
   const { addNotification } = getNotificationsContext();
 

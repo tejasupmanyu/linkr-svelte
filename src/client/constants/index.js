@@ -1,1 +1,1 @@
-export const APP_URL = "http://linkput.tk/#";
+export const APP_URL = "https://linkput.tk/#";

@@ -41,7 +41,9 @@
   }
 
   function onCopyLink() {
-    navigator.clipboard.writeText(window.location.href);
+    navigator.clipboard.writeText(
+      `${APP_URL}/${user.username}/boards/${boardId}`
+    );
     addNotification({
       text: "Copied Board URL!",
       position: "top-center",
