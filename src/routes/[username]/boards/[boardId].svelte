@@ -31,6 +31,10 @@
   import { urls } from "../../../client/API/urls";
   import Post from "../../../client/components/Post.svelte";
   import _ from "lodash";
+  import { getNotificationsContext } from "svelte-notifications";
+  import { is_empty } from "svelte/internal";
+
+  const { addNotification } = getNotificationsContext();
 
   export let boardDetails;
   export let boardId;
@@ -47,22 +51,44 @@
     const boardResponse = await API.get(`${urls.board.index}${boardId}`);
     board = await boardResponse.json();
   }
+
+  function onCopyLink() {
+    navigator.clipboard.writeText(window.location.href);
+    addNotification({
+      text: "Copied Board URL!",
+      position: "top-center",
+      removeAfter: 4000,
+    });
+  }
 </script>
 
 <section class="p-8">
   {#if boardDetails}
     <section class="sm:w-1/2 w-full m-auto flex flex-col items-center">
-      <div class="self-start">
+      <div class="self-start w-full">
         <a
           class="mb-4 hover:text-rausch"
           href={`${userDetails.username}/boards`}>
-          <i class="fas fa-arrow-left" /> All boards by {`@${userDetails.username}`}
+          <i class="fas fa-arrow-left" />
+          All boards by
+          {`@${userDetails.username}`}
         </a>
-        <h1 class="mx-auto font-bold text-3xl sm:text-6xl">🎯 {board.name}</h1>
+        <div class="flex justify-between items-center">
+          <h1 class="font-bold text-3xl sm:text-6xl">🎯 {board.name}</h1>
+          <button
+            class="text-gray-600 hover:text-gray-800 hover:bg-gray-300 text-xl
+          focus:bg-gray-300 focus:outline-none py-1 px-2 rounded mx-2 h-12"
+            on:click={onCopyLink}>
+            <i class="far fa-copy" />
+          </button>
+        </div>
       </div>
       {#each postsInBoard as post, i (post.id)}
         <Post {post} author={userDetails} showControls={false} />
       {/each}
+      {#if _.isEmpty(postsInBoard)}
+        <p>There's nothing here yet.</p>
+      {/if}
     </section>
   {:else}
     <h1 class="text-6xl text-red-500 font-bold">404</h1>

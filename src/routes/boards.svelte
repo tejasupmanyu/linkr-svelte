@@ -19,7 +19,6 @@
   import API from "../client/API";
   import { urls } from "../client/API/urls";
   import { getNotificationsContext } from "svelte-notifications";
-  import { APP_URL } from "../client/constants";
 
   const { addNotification } = getNotificationsContext();
 
@@ -51,8 +50,9 @@
 
 <section class="p-8">
   <div class="flex justify-between">
-    <h1 class="font-bold text-4xl sm:text-6xl">
-      📌 Boards {`(${boardsByUser.length})`}
+    <h1 class="font-bold text-3xl md:text-6xl">
+      📌 Boards
+      {`(${boardsByUser.length})`}
     </h1>
     <button
       class="text-gray-600 hover:text-gray-800 hover:bg-gray-300 text-xl

@@ -22,10 +22,11 @@
 
 <header
   class="sticky top-0 px-8 h-16 border-b border-gray-400 flex items-center
-    bg-white w-full z-10 shadow-md">
+    bg-white w-full z-50 shadow-md">
   <nav class="flex flex-row justify-between w-full items-center">
     <a rel="prefetch" href="/" class="font-bold text-3xl flex items-center">
-      Linkr <img class="h-8 ml-2" src="logo-512.png" alt="brand logo" />
+      Linkr
+      <img class="h-8 ml-2" src="logo-512.png" alt="brand logo" />
     </a>
     {#if user}
       <UserAvatarMenu>
@@ -36,10 +37,8 @@
             class="rounded-full sm:h-10 sm:w-10 h-8 w-8"
             src={user.profileImageUrl}
             alt="avatar" />
-          <div class="sm:mx-2 mx-1">
-            <span class="font-medium text-sm sm:text-md">
-              {user.displayName}
-            </span>
+          <div class="sm:mx-2 mx-1 flex flex-col items-start">
+            <div class="font-medium text-sm sm:text-md">{user.displayName}</div>
             <div class="text-left text-gray-600">
               <span>@{user.username}</span>
             </div>
@@ -52,7 +51,8 @@
           href={'/boards'}
           class="w-full p-4 hover:bg-gray-200 flex items-center
             hover:text-rausch">
-          <i class="far fa-clipboard w-8" /> Boards
+          <i class="far fa-clipboard w-8" />
+          Boards
         </a>
         <a
           slot="menu-item-2"
@@ -60,7 +60,8 @@
           href="/auth/logout"
           class="w-full p-4 hover:bg-gray-200 hover:text-red-700 flex
             items-center">
-          <i class="fas fa-sign-out-alt w-8" /> Logout
+          <i class="fas fa-sign-out-alt w-8" />
+          Logout
         </a>
       </UserAvatarMenu>
     {:else if segment !== 'signin'}

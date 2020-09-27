@@ -43,8 +43,10 @@
 <section class="p-8">
   {#if userDetails}
     <div class="flex justify-between">
-      <h1 class="font-bold text-6xl">
-        {`@${userDetails.username}'s`} Boards {`(${boardsByUser.length})`}
+      <h1 class="font-bold text-3xl md:text-6xl">
+        {`@${userDetails.username}'s`}
+        Boards
+        {`(${boardsByUser.length})`}
       </h1>
       <button
         class="text-gray-600 hover:text-gray-800 hover:bg-gray-300 text-xl
@@ -54,7 +56,7 @@
       </button>
     </div>
 
-    <section class="flex flex-wrap">
+    <section class="flex flex-wrap flex-col sm:flex-row">
       {#each boardsByUser as board, i (board.id)}
         <BoardThumb {board} showControls={false} refetchBoards />
       {/each}
@@ -62,7 +64,8 @@
   {:else}
     <h1 class="text-6xl text-red-500 font-bold">404</h1>
     <h2 class="text-3xl">
-      😕 No user found with username <em>{`${username}`}</em>
+      😕 No user found with username
+      <em>{`${username}`}</em>
     </h2>
   {/if}
 </section>
