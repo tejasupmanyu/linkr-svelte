@@ -36,7 +36,8 @@
           <img
             class="rounded-full sm:h-10 sm:w-10 h-8 w-8"
             src={user.profileImageUrl}
-            alt="avatar" />
+            alt="avatar"
+            lazy />
           <div class="sm:mx-2 mx-1 flex flex-col items-start">
             <div class="font-medium text-sm sm:text-md">{user.displayName}</div>
             <div class="text-left text-gray-600">
