@@ -2619,10 +2619,9 @@ levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-link-preview-generator@^0.0.4:
+"link-preview-generator@https://github.com/tejasupmanyu/link-preview-generator":
   version "0.0.4"
-  resolved "https://registry.yarnpkg.com/link-preview-generator/-/link-preview-generator-0.0.4.tgz#3e7137b2f8e05d9d7799afd6c3760669fdf88bcb"
-  integrity sha512-A2o5IdikGx8NbN4wVjcYYaWkKL7y301LnbJ5Z4ChtWWUDaczpnT9RBqVFWFRJn29XggXYwszL2q5NMAv+wa8Lg==
+  resolved "https://github.com/tejasupmanyu/link-preview-generator#0efb2aa2d71aebea434a0cfc8eb02cc3708c1104"
   dependencies:
     get-urls "^9.2.0"
     puppeteer "^2.0.0"

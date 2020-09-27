@@ -28,7 +28,7 @@
     "esm": "^3.2.25",
     "express": "^4.17.1",
     "jsdom": "^16.4.0",
-    "link-preview-generator": "^0.0.4",
+    "link-preview-generator": "https://github.com/tejasupmanyu/link-preview-generator",
     "lodash": "^4.17.19",
     "mysql2": "^2.1.0",
     "passport": "^0.4.1",
