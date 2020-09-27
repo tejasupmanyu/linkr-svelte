@@ -8,7 +8,7 @@
       headers: { "Content-Type": "application/json" },
     });
     const boards = await res.json();
-    return { boards };
+    return { boards, user };
   }
 </script>
 
@@ -19,9 +19,11 @@
   import API from "../client/API";
   import { urls } from "../client/API/urls";
   import { getNotificationsContext } from "svelte-notifications";
+  import { APP_URL } from "../client/constants";
 
   const { addNotification } = getNotificationsContext();
 
+  export let user;
   export let boards;
   let boardsByUser = [];
 
@@ -35,9 +37,9 @@
   }
 
   function onCopyLink() {
-    navigator.clipboard.writeText(window.location.href);
+    navigator.clipboard.writeText(`${APP_URL}/${user.username}/boards`);
     addNotification({
-      text: "Copied Link URL!",
+      text: "Copied URL!",
       position: "top-center",
       removeAfter: 4000,
     });

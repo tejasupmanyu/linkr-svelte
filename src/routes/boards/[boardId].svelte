@@ -20,6 +20,7 @@
   import Post from "../../client/components/Post.svelte";
   import _ from "lodash";
   import { getNotificationsContext } from "svelte-notifications";
+  import { APP_URL } from "../../client/constants";
 
   const { addNotification } = getNotificationsContext();
 
